@@ -53,8 +53,8 @@ The path for file that we have specified would be the file it would import conte
 
 ``` javascript
 "scripts": {
-    "build": "babel --out-dir dist --ignore *.test.js src",
-    "test": "jest"
+   "build": "babel --out-dir dist --ignore *.test.js src",
+   "test": "jest"
 }
 ```
 
@@ -64,9 +64,9 @@ Moreover, we have added a script for running our tests.
 * Since we do not want others to import our ES6 version of component when they import our package in their applications, we would need to update our `main` option in our `package.json` to point to the transpiled version of our component. Our scripts and name become
  ``` javascript
   "main": "dist/index.js", // Now points to the transpiled version
-   "scripts": {
-     "build": "babel --out-dir dist --ignore *.test.js src",
-     "test": "jest"
+  "scripts": {
+    "build": "babel --out-dir dist --ignore *.test.js src",
+    "test": "jest"
  }
  ```
 
@@ -176,9 +176,9 @@ npm publish
 This would publish our component to the npm registry, but we would need a slight modification in our scripts before we do that.
 ``` javascript
 "scripts": {
-    "build": "babel --out-dir dist --ignore *.test.js src",
-    "prepublish": "npm run build",
-    "test": "jest"
+   "build": "babel --out-dir dist --ignore *.test.js src",
+   "prepublish": "npm run build",
+   "test": "jest"
 }
 ```
 `prepublish` would get executed every time before we run `npm run publish` and this would make sure we have our latest build we publish our component. 
